@@ -1,0 +1,91 @@
+background_opacity: 0.95
+
+window:
+  dimensions:
+    columns: 88
+    lines: 26
+  padding:
+    x: 2
+    y: 2
+
+  energy: Performance
+
+env:
+  TERM: alacritty
+  LANG: en_US.UTF-8
+  LC_CTYPE: en_US.UTF-8
+  TERM: xterm-256color
+font:
+  offset:
+    x: 0
+    y: 0
+  normal:
+    family: jetbrainsmonomedium
+  size: 11.5
+  use_thin_strokes: true
+
+items:
+  - colors:
+      name: 3024 (dark)
+      author: Chris Kempson
+      primary:
+        background: "#1a1a1a"
+        foreground: "#a5a2a2"
+      cursor:
+        text: "#090300"
+        cursor: "#a5a2a2"
+      normal:
+        black: "#090300"
+        red: "#db2d20"
+        green: "#01a252"
+        yellow: "#fded02"
+        blue: "#01a0e4"
+        magenta: "#a16a94"
+        cyan: "#b5e4f4"
+        white: "#a5a2a2"
+      bright:
+        black: "#5c5855"
+        red: "#db2d20"
+        green: "#01a252"
+        yellow: "#fded02"
+        blue: "#01a0e4"
+        magenta: "#a16a94"
+        cyan: "#b5e4f4"
+        white: "#f7f7f7"
+colors:
+
+  #cursor:
+  #cursor: "#757575"
+
+  name: GJM
+  author: ""
+  primary:
+    background: "#101010"
+    foreground: "#d6d6d6"  #"#595959" 
+  normal:
+    black: "#1c1c1c"
+    red: "#ff005b"
+    green: "#cee318"
+    yellow: "#ffe755"
+    blue: "#048ac7"
+    magenta: "#833c9f"
+    cyan: "#0ac1cd"
+    white: "#e5e5e5"
+  bright:
+    black: "#666666"
+    red: "#ff00a0"
+    green: "#ccff00"
+    yellow: "#ff9f00"
+    blue: "#48c6ff"
+    magenta: "#be67e1"
+    cyan: "#63e7f0"
+    white: "#f3f3f3"
+
+cursor:
+  style:
+    #shape: Beam
+    blinking: Always
+
+  
+
+  blink_interval: 400
