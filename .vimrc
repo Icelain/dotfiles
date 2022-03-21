@@ -1,7 +1,9 @@
+"set cursorline
+set mouse=a
 set number
 set numberwidth =1
-set guicursor ="i:block"
 set termguicolors
+set guicursor=i:block
 set completeopt-=preview
 set ts=4 sw=4
 set clipboard=unnamedplus
@@ -17,7 +19,7 @@ let g:go_code_completion_enabled = 0
 
 let g:neovide_refresh_rate=120
 let g:neovide_remember_window_size=v:true
-let g:neovide_transparency=0.99
+"let g:neovide_transparency=0.93
 
 set nocompatible
 filetype off
@@ -36,10 +38,10 @@ Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-colorscheme codedark
+colorscheme gruvbox
 
-hi! Normal guibg=#101010 ctermbg=NONE
-hi! NonText ctermbg=NONE guibg=#171717
+"hi! Normal guibg=#121212 ctermbg=NONE
+"hi! NonText ctermbg=NONE guibg=#121212
 
 highlight clear EndOfBuffer
 highlight clear LineNr
@@ -60,9 +62,8 @@ inoremap <c-r> <c-v>
 
 let g:gruvbox_contrast_dark='hard'
 
-set guifont=jetbrains\ mono\:h11.8
-set mouse=a
-"set bg=dark
+set guifont=jetbrains\ mono:h11.5
+set bg=dark
 
-highlight EndOfBuffer guifg=#84c0e8
+highlight EndOfBuffer guifg=#a3c7c9
 highlight LineNr guifg=#828282
