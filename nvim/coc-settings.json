@@ -1,0 +1,9 @@
+{
+	
+	"coc.preferences.formatOnSave": true,
+
+	"pyright.inlayHints.parameterTypes": false,
+	"pyright.inlayHints.variableTypes": false,
+	"pyright.inlayHints.functionReturnTypes": false,
+
+}
