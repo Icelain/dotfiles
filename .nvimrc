@@ -4,15 +4,18 @@ set mouse=a
 set relativenumber
 set numberwidth =3
 set termguicolors
-"set guicursor=i:underline
-set guicursor+=i:hor20-Cursor/lCursor
+set guicursor=i:block
+"set guicursor+=i:hor20-Cursor/lCursor
 set completeopt-=preview
 set ts=4 sw=4
 set clipboard+=unnamedplus
 set signcolumn=no
 set cmdheight=0
 "set ttymouse=sgr
-
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
 set guicursor+=a:blinkon4
 filetype plugin on
 syntax on
@@ -41,7 +44,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'Mofiqul/vscode.nvim'
 "Plug 'pangloss/vim-javascript'
-"Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim'
 "Plug 'evanleck/vim-svelte'
 "Plug 'arzg/vim-rust-syntax-ext'
 "Plug 'sainnhe/sonokai'
@@ -56,15 +59,15 @@ Plug 'NoahTheDuke/vim-just'
 
 "Plug 'frazrepo/vim-rainbow'
 "Plug 'martinsione/darkplus.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'hrsh7th/cmp-buffer'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/nvim-cmp'
+"Plug 'williamboman/mason.nvim'
+"Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'ray-x/lsp_signature.nvim'
+"Plug 'ray-x/lsp_signature.nvim'
 
 call plug#end()
 
@@ -91,8 +94,8 @@ highlight clear LineNr
 
 "nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#float#close_all()<CR>
 
-"inoremap <silent><nowait><expr> <C-z> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-"inoremap <silent><nowait><expr> <C-x> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+inoremap <silent><nowait><expr> <C-z> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-x> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " use <c-r> to insert original character without triggering things like auto-pairs
 "inoremap <c-r> <c-v>
@@ -104,7 +107,9 @@ highlight clear LineNr
 
 "set bg=dark
 
-"nnoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+nnoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
 "au FileType c,cpp,objc,objcpp,go,rust,typescript,json,javascript,lua call rainbow#load()
 "let g:rainbow_active=1
@@ -113,7 +118,7 @@ highlight clear LineNr
 
 "highlight EndOfBuffer guifg=#a3c7c9
 highlight LineNr guifg=#636363
-highlight CursorLine guibg=#1a1a1b guifg=None
+highlight CursorLine guibg=#121213 guifg=None
 highlight clear CursorLineNR
 highlight SignColumn guibg=None
 
