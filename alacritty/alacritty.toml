@@ -1,0 +1,43 @@
+[font]
+normal = { family = "agave nerd font mono", style = "Regular" }
+size = 12.6
+offset = {x=0, y=0}
+
+# Colors (Gruvbox dark)
+
+# Default colors
+[colors.primary]
+## hard contrast background = = '#1d2021'
+background = '#0d0d0d'
+## soft contrast background = = '#32302f'
+foreground = '#ededed'
+#
+# Normal colors
+[colors.normal]
+black   = '#3c3836'  # Slightly lighter black for better visibility
+red     = '#ea6962'  # Softer red
+green   = '#a9b665'  # More muted, natural green
+yellow  = '#d8a657'  # Warmer, softer yellow
+blue    = '#7daea3'  # More aqua-tinted blue
+magenta = '#d3869b'  # Softer purple/magenta
+cyan    = '#89b482'  # Softer, more natural cyan
+white   = '#d4be98'  # Warmer white
+
+# Bright colors
+[colors.bright]
+black   = '#5a524c'  # Warmer gray
+red     = '#ef938e'  # Lighter, less harsh red
+green   = '#bbc585'  # Lighter, more muted green
+yellow  = '#e1bb7e'  # Warmer, softer bright yellow
+blue    = '#9dbfc1'  # Lighter, more aqua-tinted blue
+magenta = '#e1bfcc'  # Lighter, softer purple
+cyan    = '#a7c7a2'  # Lighter, more natural cyan
+white   = '#e2d3ba'  # Warmer bright white
+[window]
+padding = { x = 3, y = 2 }
+dimensions = {columns=215, lines=63}
+position = {x=430, y=320}
+
+[cursor]
+style = {shape="Block",blinking="Always"}
+blink_interval = 450

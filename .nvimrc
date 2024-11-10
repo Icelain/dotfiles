@@ -5,7 +5,6 @@ set relativenumber
 set numberwidth =3
 set termguicolors
 set guicursor=i:block
-"set guicursor+=i:hor20-Cursor/lCursor
 set completeopt-=preview
 set ts=4 sw=4
 set clipboard+=unnamedplus
@@ -16,6 +15,8 @@ set noexpandtab
 set copyindent
 set preserveindent
 set softtabstop=0
+set list listchars=tab:\ \ 
+
 set guicursor+=a:blinkon4
 filetype plugin on
 syntax on
@@ -42,7 +43,7 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'fatih/vim-go'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'Mofiqul/vscode.nvim'
+Plug 'icelain/vscode.nvim'
 "Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim'
 "Plug 'evanleck/vim-svelte'
@@ -56,7 +57,6 @@ Plug 'NoahTheDuke/vim-just'
 "Plug 'sainnhe/gruvbox-material'
 "Plug 'folke/tokyonight.nvim'
 "Plug 'rebelot/kanagawa.nvim'
-
 "Plug 'frazrepo/vim-rainbow'
 "Plug 'martinsione/darkplus.nvim'
 "Plug 'neovim/nvim-lspconfig'
@@ -68,6 +68,8 @@ Plug 'NoahTheDuke/vim-just'
 "Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 "Plug 'ray-x/lsp_signature.nvim'
+"Plug 'datsfilipe/vesper.nvim'
+
 
 call plug#end()
 
@@ -78,10 +80,11 @@ hi! NonText ctermbg=NONE guibg=None
 
 if exists("g:neovide")
 
-	hi! Normal guibg=#1e1f1c ctermbg=NONE
+	hi! Normal guibg=#0d0d0d ctermbg=NONE
 	hi! NonText ctermbg=NONE guibg=#202123
-	set linespace=3
-
+	set linespace=1
+	
+	set guifont=Agave\ Nerd\ Font\ Mono\:h13
 	let g:neovide_padding_top = 2
 	let g:neovide_padding_bottom = 2
 	let g:neovide_padding_right = 0
@@ -89,7 +92,8 @@ if exists("g:neovide")
 
 endif
 
-highlight clear EndOfBuffer
+
+highlight EndOfBuffer guifg=#494949
 highlight clear LineNr
 
 "nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#float#close_all()<CR>
@@ -118,7 +122,7 @@ autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
 "highlight EndOfBuffer guifg=#a3c7c9
 highlight LineNr guifg=#636363
-highlight CursorLine guibg=#121213 guifg=None
+highlight CursorLine guibg=#141415 guifg=None
 highlight clear CursorLineNR
 highlight SignColumn guibg=None
 

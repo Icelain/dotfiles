@@ -5,4 +5,8 @@
 	"pyright.inlayHints.functionReturnTypes": false,
 	"go.goplsOptions": {},
 	"rust-analyzer.inlayHints.typeHints.enable": false,
+	"clangd.arguments": [
+		"--inlay-hints=false"
+	],
+	"inlayHint.enable": false
 }
