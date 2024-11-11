@@ -93,7 +93,7 @@ if exists("g:neovide")
 endif
 
 
-highlight EndOfBuffer guifg=#494949
+highlight EndOfBuffer guifg=#535353
 highlight clear LineNr
 
 "nnoremap <silent> <ESC><ESC> :nohlsearch \| match none \| 2match none \| call coc#float#close_all()<CR>
@@ -121,7 +121,7 @@ autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 "let g:rainbow_guifgs = ["MediumPurple", 'orange3', 'DeepSkyBlue1', 'PaleGreen3', 'LightCyan4', 'PeachPuff1','turquoise4']
 
 "highlight EndOfBuffer guifg=#a3c7c9
-highlight LineNr guifg=#636363
+highlight LineNr guifg=#6e6e6e
 highlight CursorLine guibg=#141415 guifg=None
 highlight clear CursorLineNR
 highlight SignColumn guibg=None
