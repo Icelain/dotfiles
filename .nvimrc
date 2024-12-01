@@ -4,7 +4,6 @@ set mouse=a
 set relativenumber
 set numberwidth =3
 set termguicolors
-set guicursor=i:block
 set completeopt-=preview
 set ts=4 sw=4
 set clipboard+=unnamedplus
@@ -17,7 +16,7 @@ set preserveindent
 set softtabstop=0
 set list listchars=tab:\ \ 
 
-set guicursor+=a:blinkon4
+set guicursor=i:block
 filetype plugin on
 syntax on
 
@@ -43,7 +42,7 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'fatih/vim-go'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'icelain/vscode.nvim'
+"Plug 'icelain/vscode.nvim'
 "Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim'
 "Plug 'evanleck/vim-svelte'
@@ -53,7 +52,7 @@ Plug 'windwp/nvim-autopairs'
 "Plug 'morhetz/gruvbox'
 "Plug 'vim-airline/vim-airline'
 "Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'NoahTheDuke/vim-just'
+"Plug 'NoahTheDuke/vim-just'
 "Plug 'sainnhe/gruvbox-material'
 "Plug 'folke/tokyonight.nvim'
 "Plug 'rebelot/kanagawa.nvim'
@@ -68,12 +67,11 @@ Plug 'NoahTheDuke/vim-just'
 "Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 "Plug 'ray-x/lsp_signature.nvim'
-"Plug 'datsfilipe/vesper.nvim'
-
+Plug 'icelain/vesper.nvim'
 
 call plug#end()
 
-colorscheme vscode
+colorscheme vesper
 
 hi! Normal guibg=None ctermbg=NONE
 hi! NonText ctermbg=NONE guibg=None
@@ -121,7 +119,7 @@ autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 "let g:rainbow_guifgs = ["MediumPurple", 'orange3', 'DeepSkyBlue1', 'PaleGreen3', 'LightCyan4', 'PeachPuff1','turquoise4']
 
 "highlight EndOfBuffer guifg=#a3c7c9
-highlight LineNr guifg=#6e6e6e
+highlight LineNr guifg=#636363
 highlight CursorLine guibg=#141415 guifg=None
 highlight clear CursorLineNR
 highlight SignColumn guibg=None
