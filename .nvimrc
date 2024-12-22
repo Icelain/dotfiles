@@ -16,7 +16,6 @@ set preserveindent
 set softtabstop=0
 set list listchars=tab:\ \ 
 
-set guicursor=i:block
 filetype plugin on
 syntax on
 
@@ -42,7 +41,6 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'fatih/vim-go'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"Plug 'icelain/vscode.nvim'
 "Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim'
 "Plug 'evanleck/vim-svelte'
@@ -72,6 +70,7 @@ Plug 'icelain/vesper.nvim'
 call plug#end()
 
 colorscheme vesper
+
 
 hi! Normal guibg=None ctermbg=NONE
 hi! NonText ctermbg=NONE guibg=None
@@ -123,6 +122,8 @@ highlight LineNr guifg=#636363
 highlight CursorLine guibg=#141415 guifg=None
 highlight clear CursorLineNR
 highlight SignColumn guibg=None
+highlight TermCursor guifg=NONE guibg=#ffc799 gui=NONE cterm=NONE
+hi! TermCursorNC guibg=#ffc799 gui=NONE cterm=NONE
 
 nnoremap <silent> <C-n> <Cmd>tabnew<CR>
 nnoremap <silent> <C-m> <Cmd>tabclose<CR>
