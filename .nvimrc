@@ -65,11 +65,11 @@ Plug 'windwp/nvim-autopairs'
 "Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 "Plug 'ray-x/lsp_signature.nvim'
-Plug 'icelain/vscode.nvim'
+Plug 'icelain/vesper.nvim'
 
 call plug#end()
 
-colorscheme vscode
+colorscheme vesper
 
 
 hi! Normal guibg=None ctermbg=NONE
