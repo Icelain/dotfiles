@@ -1,0 +1,19 @@
+font-family = "agave"
+font-size = 12.0
+theme = vesper
+font-thicken
+
+#cursor-invert-fg-bg = true
+cursor-color = #ffc799
+cursor-text = #101010
+title="Ghostty"
+macos-titlebar-proxy-icon=hidden
+quit-after-last-window-closed=true
+window-width = 204
+window-height = 64
+window-padding-x=3,3
+font-synthetic-style=false
+
+window-position-y = 100
+window-position-x = 250
+adjust-cursor-thickness = 1
