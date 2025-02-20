@@ -1,4 +1,95 @@
-vim.cmd [[source ~/.config/nvim/vinit.vim]]
+-- Basic settings
+vim.opt.cursorline = true
+vim.opt.mouse = 'a'
+vim.opt.relativenumber = true
+vim.opt.numberwidth = 3
+vim.opt.completeopt:remove('preview')
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.clipboard:append('unnamedplus')
+vim.opt.signcolumn = 'no'
+vim.opt.termguicolors = true
+vim.opt.cmdheight = 0
+vim.opt.expandtab = false
+vim.opt.copyindent = true
+vim.opt.preserveindent = true
+vim.opt.softtabstop = 0
+vim.opt.list = true
+vim.opt.listchars = { tab = '  ' }
+vim.opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,n-v-c-i-ci-ve-r-cr-o:blinkwait700-blinkoff400-blinkon250'
+
+-- Enable filetype plugins and syntax
+vim.cmd('filetype plugin on')
+vim.cmd('syntax on')
+
+-- Plugins
+require('packer').startup(function(use)
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'neoclide/coc.nvim'
+    use 'windwp/nvim-autopairs'
+    use 'nvim-lualine/lualine.nvim'
+    use 'icelain/vesper.nvim'
+end)
+
+-- Colorscheme
+vim.cmd('colorscheme vesper')
+
+-- Highlight settings
+vim.cmd('hi! Normal guibg=NONE ctermbg=NONE')
+vim.cmd('hi! NonText ctermbg=NONE guibg=NONE')
+
+-- Neovide specific settings
+if vim.g.neovide then
+    vim.cmd([[
+        hi! Normal guibg=#0d0d0d ctermbg=NONE
+        hi! NonText ctermbg=NONE guibg=#202123
+    ]])
+    vim.opt.linespace = 1
+    vim.opt.guifont = 'Agave Nerd Font Mono:h13'
+    vim.g.neovide_padding_top = 2
+    vim.g.neovide_padding_bottom = 2
+    vim.g.neovide_padding_right = 0
+    vim.g.neovide_padding_left = 2
+end
+
+-- Additional highlights
+vim.cmd([[
+    highlight EndOfBuffer guifg=#535353
+    highlight clear LineNr
+    highlight LineNr guifg=#636363
+    highlight CursorLine guibg=#141415 guifg=NONE
+    highlight clear CursorLineNR
+    highlight SignColumn guibg=NONE
+    highlight TermCursor guifg=NONE guibg=#ffc799 gui=NONE cterm=NONE
+    highlight TermCursorNC guibg=#ffc799 gui=NONE cterm=NONE
+]])
+
+-- Keymaps
+local function map(mode, lhs, rhs, opts)
+    local options = { noremap = true, silent = true }
+    if opts then options = vim.tbl_extend('force', options, opts) end
+    vim.keymap.set(mode, lhs, rhs, options)
+end
+
+-- CoC specific mappings
+vim.cmd([[
+    inoremap <silent><nowait><expr> <C-z> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-x> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+    nnoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+]])
+
+-- Tab navigation
+map('n', '<C-n>', '<Cmd>tabnew<CR>')
+map('n', '<C-m>', '<Cmd>tabclose<CR>')
+map('n', '<C-j>', '<Cmd>tabprevious<CR>')
+map('n', '<C-k>', '<Cmd>tabnext<CR>')
+map('n', '<C-l>', ':noh<CR><C-l>')
+
+-- CoC autocmd
+vim.cmd([[
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+]])
 
 vim.api.nvim_create_autocmd("ExitPre", {
 	group = vim.api.nvim_create_augroup("Exit", { clear = true }),
