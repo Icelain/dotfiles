@@ -1,0 +1,17 @@
+theme = "vesper"
+
+[editor]
+line-number = "relative"
+cursorline=true
+color-modes=true
+bufferline = "multiple"
+insert-final-newline = false
+gutters = ["line-numbers", "spacer"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = false
