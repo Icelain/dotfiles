@@ -10,6 +10,9 @@ command = "/Users/icell/.cargo/bin/rust-analyzer"
 [language-server.typescript-language-server]
 command = "/Users/icell/Library/pnpm/typescript-language-server"
 
+[language-server.python-lsp-server]
+command = "/opt/homebrew/bin/pylsp"
+
 [[language]]
 name = "go"
 auto-format = true
@@ -41,3 +44,8 @@ language-servers = ["typescript-language-server"]
 name = "typescript"
 auto-format = true
 language-servers = ["typescript-language-server"]
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["python-lsp-server"]
