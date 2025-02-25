@@ -7,6 +7,9 @@ color-modes=true
 bufferline = "multiple"
 insert-final-newline = false
 gutters = ["line-numbers", "spacer"]
+idle-timeout = 1
+completion-timeout = 1
+completion-trigger-len = 1
 
 [editor.cursor-shape]
 insert = "bar"
