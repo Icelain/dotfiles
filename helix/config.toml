@@ -18,3 +18,7 @@ select = "block"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal]
+C-h = ":bp"
+C-l = ":bn"
