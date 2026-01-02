@@ -1,0 +1,142 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "VictorMono Nerd Font", monospace;
+  font-weight: 600;
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #0a0a0a;
+  border-radius: 12px;
+}
+
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#battery,
+#network,
+#pulseaudio,
+#tray,
+#custom-niri_workspaces {
+  background: transparent;
+  color: #ffe6d8;
+  padding: 2px 8px;
+  border-radius: 0;
+}
+
+/* Custom Niri Workspaces - Vesper style */
+#custom-niri_workspaces {
+  margin-left: 8px;
+  padding: 4px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  background: transparent;
+  border-radius: 6px;
+  letter-spacing: 3px;
+}
+
+/* Window title */
+#window {
+  font-weight: 400;
+  color: #ffc799;
+  margin-left: 16px;
+}
+
+/* Clock */
+#clock {
+  font-weight: 600;
+  color: #ffc799;
+  padding: 2px 12px;
+}
+
+/* System modules */
+#cpu,
+#memory {
+  color: #ffe6d8;
+}
+
+#cpu.warning,
+#memory.warning {
+  color: #ffc799;
+}
+
+#cpu.critical,
+#memory.critical {
+  color: #ff6b6b;
+  animation: blink 1s ease infinite;
+}
+
+/* Battery */
+#battery {
+  color: #ffe6d8;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #ffc799;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffc799;
+}
+
+#battery.critical:not(.charging) {
+  color: #ff6b6b;
+  animation: blink 1s ease infinite;
+}
+
+/* Network */
+#network {
+  color: #ffe6d8;
+}
+
+#network.disconnected {
+  color: #ff6b6b;
+}
+
+/* Audio */
+#pulseaudio {
+  color: #ffe6d8;
+}
+
+#pulseaudio.muted {
+  color: #666666;
+}
+
+/* System tray */
+#tray {
+  padding: 6px 10px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  color: #ffc799;
+}
+
+/* Calendar tooltip */
+tooltip {
+  background: #0a0a0a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: #ffe6d8;
+  font-size: 14px;
+  padding: 3px;
+}
+
+/* Blink animation for critical states */
+@keyframes blink {
+  to {
+    opacity: 0.5;
+  }
+}

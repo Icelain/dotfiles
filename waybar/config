@@ -1,0 +1,101 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 8,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+
+  "modules-left": ["custom/niri_workspaces", "niri/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray"],
+
+  "custom/niri_workspaces": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/niri_workspaces",
+    "return-type": "json",
+    "escape": false,
+    "markup": true,
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down",
+    "on-click": "niri msg action focus-workspace-down",
+    "on-click-right": "niri msg action focus-workspace-up",
+    "on-click-middle": "niri msg action close-window"
+  },
+
+  "niri/window": {
+    "format": "{}",
+    "max-length": 60,
+    "separate-outputs": true
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 50,
+    "separate-outputs": true
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#ffc799'><b>{}</b></span>",
+        "days": "<span color='#ffe6d8'>{}</span>",
+        "today": "<span color='#ffc799'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "interval": 2
+  },
+
+  "memory": {
+    "format": "󰘚 {percentage}%",
+    "interval": 2
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "network": {
+    "format-wifi": "󰖨 {essid}",
+    "format-ethernet": "󰈀 Connected",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "max-length": 20
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋋",
+      "phone": "󰄜",
+      "portable": "󰄜",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  }
+}
